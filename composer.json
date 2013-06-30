@@ -1,0 +1,22 @@
+{
+    "name": "annotatecms/debugger",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michal Vysinsky",
+            "email": "vysinsky@live.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "nette/nette": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Annotatecms\\Debugger": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
