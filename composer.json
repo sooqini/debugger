@@ -1,6 +1,7 @@
 {
     "name": "annotatecms/debugger",
-    "description": "",
+    "description": "Tracy debugger integration into Laravel Framework",
+	"keywords": ["annotatecms", "laravel"],
     "license": "MIT",
     "authors": [
         {
