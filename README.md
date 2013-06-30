@@ -25,5 +25,5 @@ Configuration file is now in app/config/packages/annotatecms/debugger/debugger.p
 	- development - forces to show debugger
 	- production - forces to hide debugger
 - logDirectory - directory to save debugger output. Debugger saves there exceptions reports as HTML files.
-- email - debugger can send email to this address when erorr occurs on production
+- email - debugger can send email to this address when error occurs on production
 - panels - array of 'Nette\Diagnostics\IBarPanel' implementations to add into debugger panel 
