@@ -1,4 +1,5 @@
 # AnnotateCms Debugger #
+[![Total Downloads](https://poser.pugx.org/annotatecms/debugger/version.png)](https://packagist.org/packages/annotatecms/debugger) [![Total Downloads](https://poser.pugx.org/annotatecms/debugger/downloads.png)](https://packagist.org/packages/annotatecms/debugger)
 
 AnnotateCms debugger is integration of [Tracy](https://github.com/nette/tracy "Tracy Github page") into Laravel Framework. It replaces the [Whoops](http://filp.github.io/whoops/).
 
