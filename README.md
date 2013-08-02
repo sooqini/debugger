@@ -6,7 +6,7 @@ AnnotateCms debugger is integration of [Tracy](https://github.com/nette/tracy "T
 ## Installation ##
 Install via composer into Laravel Framework's project. Add this into your composer.json file:	
 
-	"annotatecms/debugger" : "1.*"
+	"annotatecms/debugger" : "2.*"
 
 After updating composer, add the ServiceProvider to the providers array in app/config/app.php
 
@@ -27,4 +27,19 @@ Configuration file is now in app/config/packages/annotatecms/debugger/debugger.p
 	- production - forces to hide debugger
 - logDirectory - directory to save debugger output. Debugger saves there exceptions reports as HTML files.
 - email - debugger can send email to this address when error occurs on production
-- panels - array of 'Nette\Diagnostics\IBarPanel' implementations to add into debugger panel 
+- panels - array of 'Tracy\IBarPanel' implementations to add into debugger panel 
+
+## Provided panels ##
+With this panels you can use only panel name in panels list. For example:
+	
+	"panels" => array(
+		"routing"
+	)
+
+List of panels:
+
+- routing - display routes and theirs method, path and parameters. Current route is marked as bold   
+
+Planned panels:
+
+- database - diplay all database queries 
