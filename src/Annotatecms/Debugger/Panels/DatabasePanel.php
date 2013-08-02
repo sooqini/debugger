@@ -15,7 +15,7 @@ class DatabasePanel extends AbstractPanel {
     function __construct() {
         \DB::listen(function ($query, $bindings, $time, $name) {
             $this->queries[] = (object)array(
-                "query" => $this->formatQuery($query, $bindings),
+                "query" => $query,
                 "time" => $time,
                 "bindings" => $bindings,
                 "name" => $name,

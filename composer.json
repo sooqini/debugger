@@ -12,7 +12,8 @@
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x",
-        "tracy/tracy": "@dev"
+        "tracy/tracy": "@dev",
+        "jdorn/sql-formatter": "@dev"
     },
     "autoload": {
         "psr-0": {
