@@ -5,7 +5,10 @@ class Debugger {
 
     private static $panels = array(
         "routing" => "Annotatecms\\Debugger\\Panels\\RoutingPanel",
+<<<<<<< HEAD
         "database" => "Annotatecms\\Debugger\\Panels\\DatabasePanel",
+=======
+>>>>>>> 94bb504400b53a2661e4861e2a6dc519ca6a32de
     );
 
     public static function register() {
