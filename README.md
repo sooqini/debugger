@@ -38,13 +38,5 @@ With this panels you can use only panel name in panels list. For example:
 
 List of panels:
 
-<<<<<<< HEAD
 - routing - display routes and theirs method, path and parameters. Current route is marked as bold
 - database - display queries with their times and bindings   
-=======
-- routing - display routes and theirs method, path and parameters. Current route is marked as bold   
-
-Planned panels:
-
-- database - diplay all database queries 
->>>>>>> 94bb504400b53a2661e4861e2a6dc519ca6a32de
