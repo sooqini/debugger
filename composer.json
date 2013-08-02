@@ -1,0 +1,23 @@
+{
+    "name": "annotatecms/debugger",    
+	"description": "Tracy debugger integration into Laravel Framework",
+	"keywords": ["annotatecms", "laravel", "debugging", "tracy"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michal Vysinsky",
+            "email": "vysinsky@inqool.cz"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x",
+        "tracy/tracy": "@dev"
+    },
+    "autoload": {
+        "psr-0": {
+            "Annotatecms\\Debugger": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
