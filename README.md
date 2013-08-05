@@ -1,4 +1,6 @@
-# AnnotateCms Debugger #
+
+<!-- saved from url=(0060)https://raw.github.com/annotatecms/debugger/master/README.md -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css"></style></head><body><pre style="word-wrap: break-word; white-space: pre-wrap;"># AnnotateCms Debugger #
 [![Total Downloads](https://poser.pugx.org/annotatecms/debugger/version.png)](https://packagist.org/packages/annotatecms/debugger) [![Total Downloads](https://poser.pugx.org/annotatecms/debugger/downloads.png)](https://packagist.org/packages/annotatecms/debugger)
 
 AnnotateCms debugger is integration of [Tracy](https://github.com/nette/tracy "Tracy Github page") into Laravel Framework. It replaces the [Whoops](http://filp.github.io/whoops/).
@@ -32,7 +34,7 @@ Configuration file is now in app/config/packages/annotatecms/debugger/debugger.p
 ## Provided panels ##
 With this panels you can use only panel name in panels list. For example:
 	
-	"panels" => array(
+	"panels" =&gt; array(
 		"routing"
 	)
 
@@ -40,3 +42,4 @@ List of panels:
 
 - routing - display routes and theirs method, path and parameters. Current route is marked as bold
 - database - display queries with their times and bindings   
+</pre></body></html>

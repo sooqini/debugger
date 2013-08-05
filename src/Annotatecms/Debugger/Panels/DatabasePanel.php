@@ -26,23 +26,15 @@ class DatabasePanel extends AbstractPanel {
         $this->connectionsCount = count($this->connections);
     }
 
-    private function formatQuery($query, $bindings) {
-        $i = 0;
-        while (($pos = strpos($query, " ?")) !== FALSE) {
-            $query = substr_replace($query, " <b style='cursor: help;' title='" . $bindings[$i] . "'>?</b>", $pos, 2);
-            $i++;
-        }
-
-        return $query;
-    }
-
     /**
      * Renders HTML code for custom tab.
      *
      * @return string
      */
     function getTab() {
-        return $this->renderFile(__DIR__ . "/templates/database/tab.php");
+        if(count($this->queries)) {
+            return $this->renderFile(__DIR__ . "/templates/database/tab.php");
+        }
     }
 
     /**
@@ -51,7 +43,9 @@ class DatabasePanel extends AbstractPanel {
      * @return string
      */
     function getPanel() {
-        return $this->renderFile(__DIR__ . "/templates/database/panel.php");
+        if(count($this->queries)) {
+            return $this->renderFile(__DIR__ . "/templates/database/panel.php");
+        }
     }
 
 }
