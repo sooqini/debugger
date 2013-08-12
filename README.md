@@ -5,6 +5,13 @@
 AnnotateCms debugger is integration of [Tracy](https://github.com/nette/tracy "Tracy Github page") into Laravel Framework. It replaces the [Whoops](http://filp.github.io/whoops/).
 
 ## Installation ##
+
+### Via rtablada/package-installer ###
+Since version 2.0.6 you can use [rtablada/package-installer](https://github.com/rtablada/package-installer):
+
+	artisan package:install annotatecms/debugger
+
+### Via composer ###
 Install via composer into Laravel Framework's project. Add this into your composer.json file:	
 
 	"annotatecms/debugger" : "2.*"
