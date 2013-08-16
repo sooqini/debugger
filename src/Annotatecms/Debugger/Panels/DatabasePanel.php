@@ -7,14 +7,19 @@ namespace Annotatecms\Debugger\Panels;
 
 class DatabasePanel extends AbstractPanel {
 
-    protected $queries;
+    protected $queries = array();
     protected $totalTime = 0;
     protected $connectionsCount = 1;
     protected $connections = array();
 
     function __construct() {
+        $this->registerListener();
+        $this->connectionsCount = count($this->connections);
+    }
+
+    private function registerListener() {
         \DB::listen(function ($query, $bindings, $time, $name) {
-            $this->queries[] = (object)array(
+            $this->queries[] = (object) array(
                 "query" => $query,
                 "time" => $time,
                 "bindings" => $bindings,
@@ -23,28 +28,15 @@ class DatabasePanel extends AbstractPanel {
             $this->connections[$name] = 1;
             $this->totalTime += $time;
         });
-        $this->connectionsCount = count($this->connections);
     }
 
-    /**
-     * Renders HTML code for custom tab.
-     *
-     * @return string
-     */
-    function getTab() {
-        if(count($this->queries)) {
-            return $this->renderFile(__DIR__ . "/templates/database/tab.php");
-        }
+    function getTemplatesPath() {
+        return __DIR__ . "/templates/database";
     }
 
-    /**
-     * Renders HTML code for custom panel.
-     *
-     * @return string
-     */
-    function getPanel() {
+    public function getTab() {
         if(count($this->queries)) {
-            return $this->renderFile(__DIR__ . "/templates/database/panel.php");
+            return parent::getTab();
         }
     }
 

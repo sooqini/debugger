@@ -1,16 +1,22 @@
 <?php
 namespace Annotatecms\Debugger;
 
+use Nette\Diagnostics\Bar;
+
 class Debugger {
 
-    private static $panels = array(
+    /**
+     * @var Bar
+     */
+    private $bar;
+
+    private static $alliases = array(
         "routing" => "Annotatecms\\Debugger\\Panels\\RoutingPanel",
         "database" => "Annotatecms\\Debugger\\Panels\\DatabasePanel",
     );
 
-    public static function register() {
-
-        $config = \Config::get("debugger::debugger");
+    function __construct() {
+        $config = \Config::get("annotatecms/debugger::debugger");
 
         if ($config["enabled"]) {
             $mode = $config["mode"];
@@ -21,16 +27,19 @@ class Debugger {
             \Tracy\Debugger::enable($mode, $logDirectory, $email);
             \Tracy\Debugger::$strictMode = TRUE;
 
-            $bar = \Tracy\Debugger::getBar();
+            $this->bar = \Tracy\Debugger::getBar();
 
             foreach ($panels as $panelClass) {
-                if(!class_exists($panelClass) && isset(self::$panels[$panelClass])) {
-                    $panelClass = self::$panels[$panelClass];
+                if (!class_exists($panelClass) && isset(self::$alliases[$panelClass])) {
+                    $panelClass = self::$alliases[$panelClass];
                 }
-                $bar->addPanel(new $panelClass);
+                $this->bar->addPanel(new $panelClass);
             }
         }
+    }
 
+    public function addPanel(callable $factory) {
+        $this->bar->addPanel($factory());
     }
 
 }

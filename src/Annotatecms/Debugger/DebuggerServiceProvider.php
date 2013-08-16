@@ -1,5 +1,6 @@
 <?php namespace Annotatecms\Debugger;
 
+use Annotatecms\Debugger\Panels\RoutingPanel;
 use Illuminate\Support\ServiceProvider;
 
 class DebuggerServiceProvider extends ServiceProvider {
@@ -12,8 +13,8 @@ class DebuggerServiceProvider extends ServiceProvider {
     protected $defer = FALSE;
 
     public function boot() {
-        $this->package("annotatecms/debugger");
-        Debugger::register();
+        $this->package("annotatecms/debugger", "annotatecms/debugger");
+        \App::make("annotate.debugger");
     }
 
     /**
@@ -22,15 +23,9 @@ class DebuggerServiceProvider extends ServiceProvider {
      * @return void
      */
     public function register() {
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides() {
-        return array();
+        $this->app["annotate.debugger"] = $this->app->share(function ($app) {
+            return new Debugger();
+        });
     }
 
 }

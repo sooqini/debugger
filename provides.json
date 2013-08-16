@@ -3,5 +3,8 @@
         "Annotatecms\\Debugger\\DebuggerServiceProvider"
     ],
     "aliases": [
-	]
+        {
+            "Debugger" : "Annotatecms\\Debugger\\Facades\\Debugger"
+        }
+    ]
 }
