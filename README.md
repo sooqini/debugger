@@ -70,3 +70,8 @@ Panel class must extend **AbstractPanel** class. You have to implement only one 
 
 ### Panel templates ###
 Panel templates are plain php files. File tab.php renders panel's tab. Typically some icon and name of panel. File panel.php renders panel's content. You can use css classes provided by tracy package. For example see [routing/panel.php](src/Annotatecms/Debugger/Panels/templates/routing/panel.php) and [routing/tab.php](src/Annotatecms/Debugger/Panels/templates/database/tab.php) 
+
+## Screenhosts ##
+![Bar panel](https://dl.dropboxusercontent.com/u/78644957/debugger/bar.png)
+![Caught exception](https://dl.dropboxusercontent.com/u/78644957/debugger/exception.png)
+![Routing panel](https://dl.dropboxusercontent.com/u/78644957/debugger/routing_panel.png)
