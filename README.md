@@ -75,3 +75,4 @@ Panel templates are plain php files. File tab.php renders panel's tab. Typically
 ![Bar panel](https://dl.dropboxusercontent.com/u/78644957/debugger/bar.png)
 ![Caught exception](https://dl.dropboxusercontent.com/u/78644957/debugger/exception.png)
 ![Routing panel](https://dl.dropboxusercontent.com/u/78644957/debugger/routing_panel.png)
+![Database panel](https://dl.dropboxusercontent.com/u/78644957/debugger/database_panel.png)
