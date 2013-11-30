@@ -37,7 +37,13 @@ $currentRoute = Route::current();
                     <?php echo $route->uri(); ?>
                 </td>
                 <td>
-                    <?php echo Dumper::toHtml($route->parameters(), array(Dumper::COLLAPSE => TRUE)); ?>
+                    <?php
+                    try {
+                        echo Dumper::toHtml($route->parameters(), array(Dumper::COLLAPSE => TRUE));
+                    } catch(\LogicException $e) {
+                        echo Dumper::toHtml(array());
+                    }
+                     ?>
                 </td>
             </tr>
         <?php endforeach; ?>
