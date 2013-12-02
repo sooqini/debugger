@@ -5,7 +5,7 @@ use Tracy\Dumper;
 
 $routes = Route::getRoutes();
 /** @var \Illuminate\Routing\Route $currentRoute */
-$currentRoute = Route::getCurrentRoute();
+$currentRoute = Route::current();
 ?>
 
 <style type="text/css">
@@ -31,13 +31,19 @@ $currentRoute = Route::getCurrentRoute();
                 class="bold"
             <?php endif; ?>>
                 <td>
-                    <?php echo implode("|", $route->getMethods()); ?>
+                    <?php echo implode("|", $route->methods()); ?>
                 </td>
                 <td>
-                    <?php echo $route->getPath(); ?>
+                    <?php echo $route->uri(); ?>
                 </td>
                 <td>
-                    <?php echo Dumper::toHtml($route->getParameters(), array(Dumper::COLLAPSE => TRUE)); ?>
+                    <?php
+                    try {
+                        echo Dumper::toHtml($route->parameters(), array(Dumper::COLLAPSE => TRUE));
+                    } catch(\LogicException $e) {
+                        echo Dumper::toHtml(array());
+                    }
+                     ?>
                 </td>
             </tr>
         <?php endforeach; ?>
