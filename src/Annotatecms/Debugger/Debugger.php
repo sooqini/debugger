@@ -42,4 +42,8 @@ class Debugger {
         $this->bar->addPanel($factory());
     }
 
+    public function log($message, $priority = \Tracy\Debugger::INFO) {
+        \Tracy\Debugger::log($message, $priority);
+    }
+
 }
