@@ -13,6 +13,6 @@ class Logger {
 			$message = implode(' ', $message);
 		}
 		$message = preg_replace('#\s*\r?\n\s*#', ' ', trim($message));
-		return Log::getMonolog()->log($priority, $message);
+		return \Log::getMonolog()->log($priority, $message);
 	}
 } 
