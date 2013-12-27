@@ -25,7 +25,8 @@ class Debugger {
             $panels = $config["panels"];
 
             \Tracy\Debugger::enable($mode, $logDirectory, $email);
-            \Tracy\Debugger::$strictMode = TRUE;
+	        \Tracy\Debugger::$strictMode = TRUE;
+	        \Tracy\Debugger::setLogger(new Logger());
 
             $this->bar = \Tracy\Debugger::getBar();
 
