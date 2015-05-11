@@ -12,6 +12,27 @@ class Logger {
 		if (is_array($message)) {
 			$message = implode(' ', $message);
 		}
+
+
+        /** Fix Priority to be PSR-3 Compliant */
+
+        $levels = [
+            'debug',
+            'info',
+            'notice',
+            'warning',
+            'error',
+            'critical',
+            'alert',
+            'emergency'
+        ];
+
+
+        if(!in_array($priority, $levels) || !is_null($priority)) {
+            $priority = 'error';
+        }
+
+        
 		$message = preg_replace('#\s*\r?\n\s*#', ' ', trim($message));
 		return \Log::getMonolog()->log($priority, $message);
 	}
